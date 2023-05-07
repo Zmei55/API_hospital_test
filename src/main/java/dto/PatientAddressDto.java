@@ -1,4 +1,4 @@
-package com.model;
+package dto;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @Builder
-public class PatientAddress {
+public class PatientAddressDto {
     private String street;
     private String houseNumber;
     private String city;

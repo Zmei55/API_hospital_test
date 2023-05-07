@@ -1,4 +1,4 @@
-package com.model;
+package dto;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -11,6 +11,6 @@ import java.util.ArrayList;
 @Setter
 @ToString
 @Builder
-public class FindPatientResponseData {
-    private ArrayList<Patient> result;
+public class FindPatientResponseDataDto {
+    private ArrayList<PatientDto> result;
 }

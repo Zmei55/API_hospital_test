@@ -1,4 +1,4 @@
-package com.model;
+package dto;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -11,7 +11,7 @@ import java.util.Date;
 @Setter
 @ToString
 @Builder
-public class Patient {
+public class PatientDto {
     private String _id;
     private String name;
     private Date birthDate;
@@ -20,5 +20,5 @@ public class Patient {
     private String gender;
     private String phoneNumber;
     private String identityDocument;
-    private PatientAddress residenceAddress;
+    private PatientAddressDto residenceAddress;
 }

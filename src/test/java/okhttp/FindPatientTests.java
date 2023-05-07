@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.List;
 
 public class FindPatientTests {
     Gson gson = new Gson();
@@ -62,6 +63,11 @@ public class FindPatientTests {
 
         PatientResponseDto resDto = gson.fromJson(response.body().string(), PatientResponseDto.class);
         Assert.assertTrue(resDto.getData().getResult().get(0).getName().contains("Emma Weber"));
+        List<PatientDto> patientsList = resDto.getData().getResult();
+
+        for(PatientDto patient: patientsList) {
+            System.out.println(patient.getName());
+        }
     }
 
     @Test

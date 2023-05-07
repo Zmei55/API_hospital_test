@@ -1,4 +1,4 @@
-package com.model;
+package dto;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -9,7 +9,8 @@ import lombok.ToString;
 @Setter
 @ToString
 @Builder
-public class AuthResponseData {
-    private User user;
-    private String token;
+public class UserDto {
+    private String name;
+    private String logName;
+    private String station;
 }
