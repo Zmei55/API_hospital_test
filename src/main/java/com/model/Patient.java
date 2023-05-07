@@ -1,4 +1,4 @@
-package dto;
+package com.model;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -11,16 +11,14 @@ import java.util.Date;
 @Setter
 @ToString
 @Builder
-public class PatientDto {
-    private String id;
+public class Patient {
+    private String _id;
     private String name;
     private Date birthDate;
     private String email;
-    private int cardNumber;
+    private String cardNumber;
     private String gender;
     private String phoneNumber;
     private String identityDocument;
-    private Object residenceAddress;
-    private Object services;
-    private Object containers;
+    private PatientAddress residenceAddress;
 }

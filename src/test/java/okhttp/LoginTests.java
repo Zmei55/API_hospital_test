@@ -35,7 +35,7 @@ public class LoginTests {
         Assert.assertEquals(response.code(), 200); // сравнение кода ответа
 
         AuthResponseDto responseDto = gson.fromJson(response.body().string(), AuthResponseDto.class);
-        System.out.println(responseDto.getData().getToken());
+        System.out.println(responseDto);
     }
 
     @Test
@@ -52,13 +52,11 @@ public class LoginTests {
                 .post(body).build(); // составляем запрос
 
         Response response = client.newCall(request).execute(); // делает запрос
-        System.out.println(response);
 
         Assert.assertFalse((response.isSuccessful()));
         Assert.assertEquals(response.code(), 500);
 
         ErrorDto errorDto = gson.fromJson(response.body().string(),ErrorDto.class);
-        System.out.println(errorDto);
 
 //        Assert.assertEquals(errorDto.getError(),"Unauthorized");
         Assert.assertEquals(errorDto.getMessage(),"Cannot read properties of null (reading 'password')");
